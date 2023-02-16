@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 
+
 @dataclass(order=True)
 class Student:
     name: str           # ім’я студента
@@ -14,9 +15,9 @@ class Student:
 
     # def __repr__(self):
     #     return self.get_info()
+
     def get_message(self) -> str:
         """Метод для виведення інформації по алгоритму"""
-
         if self.mark in range(0,60):
             letter, markname = "FX", "незадовільно"
         elif self.mark in range(60, 68):
@@ -43,12 +44,12 @@ class Student:
 
     @property
     def mark(self):
-        # print("getter")
+        """Getter для атрибуту mark"""
         return self.__mark
 
     @mark.setter
     def mark(self, value):
-        # print("setter")
+        """Setter для атрибуту mark з забороною помилкових значень"""
         if type(value) != int:
             raise TypeError
         elif value < 0 or value > 100:

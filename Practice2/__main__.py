@@ -1,6 +1,7 @@
 from generator import Generator
 from AlgorithmsCourse.Practice1.student_dataclass import Student
 
+
 if __name__ == "__main__":
 
     st = Student("Тарас", "Тарасов", "АСД", 88)

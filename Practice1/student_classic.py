@@ -43,17 +43,17 @@ class StudentBasic:
 
 
 class Student(StudentBasic):
-    """Розширений клас через наслідування Student"""
+    """Розширений клас через наслідування StudentBasic"""
     __mark: int
 
     @property
     def mark(self):
-        # print("getter")
+        """Getter для атрибуту mark"""
         return self.__mark
 
     @mark.setter
     def mark(self, value):
-        # print("setter")
+        """Setter для атрибуту mark з забороною помилкових значень"""
         if type(value) != int:
             raise TypeError
         elif value < 0 or value > 100:
