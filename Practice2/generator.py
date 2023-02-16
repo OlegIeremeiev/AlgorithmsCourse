@@ -42,7 +42,6 @@ class Generator:
         return plist
 
     def generate_10_000(self) -> list:
-        plist = list()
-        [plist.append(self.generate_single()) for i in range(10000)]
+        plist = [self.generate_single() for i in range(10000)]
         return plist
 
