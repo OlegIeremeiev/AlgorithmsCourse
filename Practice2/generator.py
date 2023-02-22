@@ -3,6 +3,7 @@ import random
 from datetime import date
 from AlgorithmsCourse.Practice1.student_dataclass import Student
 
+
 class Generator:
     disciplines = ("Алгоритми і структури даних",
                    "Основи програмування",
@@ -26,6 +27,8 @@ class Generator:
         return "{:04d}-{:02d}-{:02d}".format(year, month, day)
 
     def generate_single(self) -> Student:
+        """Метод автоматичного створення екземпляру класу Student з випадковими чи обраними з певного переліку значеннями кожної властивості класу
+        """
         name = names.get_first_name()
         surname = names.get_last_name()
 
@@ -36,12 +39,14 @@ class Generator:
         return Student(name, surname, disc, mark, exam)
 
     def generate_1000(self) -> list:
+        """Метод генерування 1000 об'єктів класу Student"""
         plist = list()
         for i in range(1000):
             plist.append(self.generate_single())
         return plist
 
     def generate_10_000(self) -> list:
+        """Метод генерування 10 000 об'єктів класу Student"""
         plist = [self.generate_single() for i in range(10000)]
         return plist
 

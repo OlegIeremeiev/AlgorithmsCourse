@@ -4,9 +4,10 @@ from AlgorithmsCourse.Practice1.student_dataclass import Student
 
 class TestGenerator:
 
-    @pytest.fixture()
+    @pytest.fixture
     def init_student(self):
-        """Підготовка до тестів"""
+        """Підготовка до тестів
+        """
         return Student("Name", "Surname", "Discipline", 87)
 
     def test_gen_single_types(self):
