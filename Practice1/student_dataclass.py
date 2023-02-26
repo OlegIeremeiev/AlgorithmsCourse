@@ -1,13 +1,15 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
+from AlgorithmsCourse.Practice1.abstract_object import AbstractObject
 
 
 @dataclass(order=True)
-class Student:
+class Student(AbstractObject):
     name: str           # ім’я студента
     surname: str        # прізвище студента
     discipline: str     # назва дисципліни
-    mark: int           # оцінка з дисципліни
-    exam: str = "іспит" # передвстановлене значення
+    mark: int           # оцінка з дисципліни (декоратор)
+    __mark: int = field(init=False)
+    exam: str = "іспит"  # передвстановлене значення
 
     def get_info(self) -> str:
         """Метод для виведення стислої інформації
@@ -21,7 +23,7 @@ class Student:
     def get_message(self) -> str:
         """Метод для виведення інформації по алгоритму
         """
-        if self.mark in range(0,60):
+        if self.mark in range(0, 60):
             letter, markname = "FX", "незадовільно"
         elif self.mark in range(60, 68):
             letter, markname = "E", "задовільно"
@@ -61,4 +63,3 @@ class Student:
             raise ValueError
         else:
             self.__mark = value
-

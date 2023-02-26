@@ -37,14 +37,14 @@ class TestStudentClass:
         """
         assert init_student.get_info() == "Student(Name, Surname, Discipline, іспит, 87)"
 
-    values_to_try = [ (Student("Stu", "dent1", "Algo", 0, "залік"), "FX", "незараховано"),
-                      (Student("Stu", "dent2", "Algo", 80, "залік"), "C", "зараховано"),
-                      (Student("Stu", "dent3", "Algo", 67, "іспит"), "E", "задовільно"),
-                      (Student("Stu", "dent4", "Algo", 74, "іспит"), "D", "задовільно"),
-                      (Student("Stu", "dent5", "Algo", 75, "іспит"), "C", "добре"),
-                      (Student("Stu", "dent6", "Algo", 83, "іспит"), "B", "добре"),
-                      (Student("Stu", "dent7", "Algo", 90, "іспит"), "A", "відмінно"),
-                      (Student("Stu", "dent8", "Algo", 100, "іспит"), "A", "відмінно")]
+    values_to_try = [(Student("Stu", "dent1", "Algo", 0, "залік"), "FX", "незараховано"),
+                     (Student("Stu", "dent2", "Algo", 80, "залік"), "C", "зараховано"),
+                     (Student("Stu", "dent3", "Algo", 67, "іспит"), "E", "задовільно"),
+                     (Student("Stu", "dent4", "Algo", 74, "іспит"), "D", "задовільно"),
+                     (Student("Stu", "dent5", "Algo", 75, "іспит"), "C", "добре"),
+                     (Student("Stu", "dent6", "Algo", 83, "іспит"), "B", "добре"),
+                     (Student("Stu", "dent7", "Algo", 90, "іспит"), "A", "відмінно"),
+                     (Student("Stu", "dent8", "Algo", 100, "іспит"), "A", "відмінно")]
 
     @pytest.mark.parametrize('student, letter, mname', values_to_try)
     def test_get_message(self, student, letter, mname):
@@ -77,18 +77,18 @@ class TestStudentErrors:
         """Очікуємо помилку TypeError при виконанні тесту
         """
         with pytest.raises(TypeError):
-            s = Student("Name", "Surname", "Discipline", "87")
+            Student("Name", "Surname", "Discipline", "87")
 
-    values_to_try = [ ("Stu", "dent1", "Algo", -10),
-                      ("Stu", "dent2", "Algo", 160),
-                      ("Stu", "dent3", "Algo", 0),
-                      ("Stu", "dent4", "Algo", 101)]
+    values_to_try = [("Stu", "dent1", "Algo", -10),
+                     ("Stu", "dent2", "Algo", 160),
+                     ("Stu", "dent3", "Algo", 0),
+                     ("Stu", "dent4", "Algo", 101)]
 
     @pytest.mark.xfail
     @pytest.mark.parametrize('name, surname, disc, mark', values_to_try)
     def test_mark_value_error(self, name, surname, disc, mark):
         with pytest.raises(ValueError):
-            s = Student(name, surname, disc, mark)
+            Student(name, surname, disc, mark)
 
 
 class TestStudentComparison:

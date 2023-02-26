@@ -1,12 +1,16 @@
-class StudentBasic:
+from AlgorithmsCourse.Practice1.abstract_object import AbstractObject
+
+
+class StudentBasic(AbstractObject):
     name: str           # ім’я студента
     surname: str        # прізвище студента
     discipline: str     # назва дисципліни
     mark: int           # оцінка з дисципліни
-    exam: str = "іспит" # передвстановлене значення
+    exam: str = "іспит"  # передвстановлене значення
 
     def __init__(self, name: str, surname: str, discipline: str, mark: int, exam: str = "іспит") -> None:
-        """Конструктор класу - метод, що запускається при створенні об'єкта і використовується для початкового внесення необхідних даних
+        """Конструктор класу - метод, що запускається при створенні об'єкта і використовується для початкового внесення
+        необхідних даних
         """
         self.name = name
         self.surname = surname
@@ -93,4 +97,3 @@ class Student(StudentBasic):
         """
         return (self.surname, self.name, self.discipline, self.mark) \
             >= (other.surname, other.name, other.discipline, other.mark)
-
