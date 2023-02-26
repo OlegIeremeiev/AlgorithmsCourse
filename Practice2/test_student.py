@@ -12,7 +12,7 @@ class TestStudentClass:
         """
         return Student("Name", "Surname", "Discipline", 87)
 
-    def test_data_type(self,init_student):
+    def test_data_type(self, init_student):
         """Перевірка відповідності класу"""
         assert isinstance(init_student, Student)
 
@@ -50,7 +50,6 @@ class TestStudentClass:
     def test_get_message(self, student, letter, mname):
         """Перевірка get_message() на коректних значеннях
         """
-
         assert student.get_message() == f'"Студент {student.name} {student.surname} ' \
                                         f'по предмету {student.discipline} отримав ' \
                                         f'оцінку "{mname}" ({letter}, {student.mark})"'

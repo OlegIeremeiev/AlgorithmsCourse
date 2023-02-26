@@ -15,7 +15,6 @@ class StudentBasic:
         self.exam = exam
 
     def get_info(self) -> str:
-        pass
         """Метод для виведення стислої інформації
         """
         return f"Student({self.name}, {self.surname}, {self.discipline}, {self.exam}, {self.mark})"
