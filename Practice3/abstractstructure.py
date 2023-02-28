@@ -54,28 +54,36 @@ class AbstractStructure(ABC):
     def copy(self) -> list[AbstractObject]:
         pass
 
+    @abstractmethod
+    def __iter__(self) -> Iterable:
+        pass
+
+    @abstractmethod
+    def __next__(self) -> AbstractObject:
+        pass
+
     # Не обов'язкові методи
     #
-    # @abstractmethod
-    # def __delitem__(self, key):
-    #     pass
-    #
-    # @abstractmethod
-    # def extend(self, values: Iterable[AbstractObject]) -> None:
-    #     pass
-    #
-    # @abstractmethod
-    # def count(self, value: AbstractObject) -> int:
-    #     pass
-    #
-    # @abstractmethod
-    # def pop(self, index: int) -> AbstractObject:
-    #     pass
-    #
-    # @abstractmethod
-    # def reverse(self) -> None:
-    #     pass
-    #
+    @abstractmethod
+    def __delitem__(self, key):
+        pass
+
+    @abstractmethod
+    def extend(self, values: Iterable[AbstractObject]) -> None:
+        pass
+
+    @abstractmethod
+    def count(self, value: AbstractObject) -> int:
+        pass
+
+    @abstractmethod
+    def pop(self, index: int) -> AbstractObject:
+        pass
+
+    @abstractmethod
+    def reverse(self) -> None:
+        pass
+
     # @abstractmethod
     # def min(self) -> AbstractObject:
     #     pass

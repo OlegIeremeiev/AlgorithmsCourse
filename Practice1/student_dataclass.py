@@ -17,8 +17,8 @@ class Student(AbstractObject):
         return f"Student({self.name}, {self.surname}," \
                f" {self.discipline}, {self.exam}, {self.mark})"
 
-    # def __repr__(self):
-    #     return self.get_info()
+    def __repr__(self):
+        return self.get_info()
 
     def get_message(self) -> str:
         """Метод для виведення інформації по алгоритму

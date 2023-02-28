@@ -10,3 +10,6 @@ class AbstractObject(ABC):
     @abstractmethod
     def get_message(self) -> str:
         pass
+
+    def __repr__(self):
+        pass
