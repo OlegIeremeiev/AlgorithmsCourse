@@ -1,5 +1,5 @@
 from AlgorithmsCourse.Practice2.generator import Generator
-from AlgorithmsCourse.Practice3.structureexample import StructureExample
+from AlgorithmsCourse.Practice3.structureexamples import StructureExample
 from AlgorithmsCourse.Practice1.student_dataclass import Student
 from AlgorithmsCourse.Practice1.abstract_object import AbstractObject
 
