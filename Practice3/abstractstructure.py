@@ -31,11 +31,11 @@ class AbstractStructureBasic(ABC):
         pass
 
     @abstractmethod
-    def __getitem__(self, item) -> AbstractObject:
+    def __getitem__(self, key) -> AbstractObject:
         """
         Метод отримання значення елемента структури за індексом
-            value = struct[item]
-        :param item: Ціле число(індекс) або зріз(діапазон чисел)
+            value = struct[key]
+        :param key: Ціле число(індекс) або зріз(діапазон чисел)
         :return: Значення елемента по вказаному ключу або IndexError
         """
         pass
@@ -174,6 +174,14 @@ class AbstractStructureExtended(AbstractStructureBasic):
 
 class AbstractStructureBonus(AbstractStructureExtended):
     # Бонусний набір методів
+
+    @abstractmethod
+    def deepcopy(self) -> list[AbstractObject] | AbstractStructureBasic:
+        """
+        Метод, що повертає копію структури з однаковими значеннями в нових об'єктах елементів структури (не посиланнями на об'єкти поточної структури)
+        :return: Копія структури
+        """
+        pass
 
     @abstractmethod
     def min(self) -> AbstractObject:

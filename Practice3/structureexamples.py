@@ -99,7 +99,6 @@ class ArrayParts(AbstractStructureBasic):
         self.__array = [None] * 10  # [None, None, None, None, None, None, None, None, None, None]
         self.__size = 0
         self.__reserved = 10        # Загальний розмір масиву - кількість зберігаємих об'єктів + зарезервовані місця
-        self.__iter_index = -1
 
         if len(args) == 1 and isinstance(args, Iterable):
             if len(args[0]) >= self.__reserved:
