@@ -4,8 +4,8 @@ from AlgorithmsCourse.Practice1.abstract_object import AbstractObject
 
 @dataclass(order=True)
 class Student(AbstractObject):
-    name: str           # ім’я студента
     surname: str        # прізвище студента
+    name: str           # ім’я студента
     discipline: str     # назва дисципліни
     mark: int           # оцінка з дисципліни (декоратор)
     __mark: int = field(init=False)
@@ -14,7 +14,7 @@ class Student(AbstractObject):
     def get_info(self) -> str:
         """Метод для виведення стислої інформації
         """
-        return f"Student({self.name}, {self.surname}," \
+        return f"Student({self.surname}, {self.name}," \
                f" {self.discipline}, {self.exam}, {self.mark})"
 
     def __repr__(self):

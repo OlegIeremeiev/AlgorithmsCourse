@@ -36,7 +36,7 @@ class Generator:
             random.randint(0, 2)]
         disc = random.choice(self.disciplines)
         mark = random.randint(0,100)
-        return Student(name, surname, disc, mark, exam)
+        return Student(surname, name, disc, mark, exam)
 
     def generate_1000(self) -> list:
         """Метод генерування 1000 об'єктів класу Student"""

@@ -71,7 +71,7 @@ class AbstractStructureBasic(ABC):
         pass
 
     @abstractmethod
-    def index(self, value: AbstractObject, start: int, stop: int) -> int:
+    def index(self, value: AbstractObject, start: int = 0, stop: int = -1) -> int:
         """
         Метод пошуку значення в структурі з поверненням її індексу
         :param value: Значення елемента, що шукається
