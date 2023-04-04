@@ -16,6 +16,14 @@ class AbstractStack(ABC):
     def top(self) -> AbstractObject:
         ...
 
+    @abstractmethod
+    def __repr__(self):
+        ...
+
+    @abstractmethod
+    def __len__(self):
+        ...
+
 
 class AbstractQueue(ABC):
 
@@ -29,6 +37,14 @@ class AbstractQueue(ABC):
 
     @abstractmethod
     def top(self) -> AbstractObject:
+        ...
+
+    @abstractmethod
+    def __repr__(self):
+        ...
+
+    @abstractmethod
+    def __len__(self):
         ...
 
 
@@ -57,3 +73,12 @@ class AbstractDeque(ABC):
     @abstractmethod
     def top_last(self) -> AbstractObject:
         ...
+
+    @abstractmethod
+    def __repr__(self):
+        ...
+
+    @abstractmethod
+    def __len__(self):
+        ...
+
