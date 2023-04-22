@@ -17,11 +17,11 @@ class AbstractStack(ABC):
         ...
 
     @abstractmethod
-    def __repr__(self):
+    def __repr__(self) -> str:
         ...
 
     @abstractmethod
-    def __len__(self):
+    def __len__(self) -> int:
         ...
 
 
@@ -40,11 +40,11 @@ class AbstractQueue(ABC):
         ...
 
     @abstractmethod
-    def __repr__(self):
+    def __repr__(self) -> str:
         ...
 
     @abstractmethod
-    def __len__(self):
+    def __len__(self) -> int:
         ...
 
 
@@ -75,10 +75,9 @@ class AbstractDeque(ABC):
         ...
 
     @abstractmethod
-    def __repr__(self):
+    def __repr__(self) -> str:
         ...
 
     @abstractmethod
-    def __len__(self):
+    def __len__(self) -> int:
         ...
-

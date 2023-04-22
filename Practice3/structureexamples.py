@@ -11,50 +11,50 @@ class StructureExample(AbstractStructureExtended):
         """Ініціалізація окремими значеннями або ітерируємою структурою (list, tuple, ...) з даними
         :param args: Кортеж аргументів змінної довжини з об'єктами або структурою (Iterable) з даними
         """
-        self.__list: list[AbstractObject] = []        # внутрішній масив для зберігання даних
+        self._list: list[AbstractObject] = []        # внутрішній масив для зберігання даних
         self.__iter_index = 0   # індекс ітератора
 
         if args and isinstance(args[0], AbstractObject):
             for element in args:
-                self.__list.append(element)         # додавання окремих перелічених об'єктів до внутрішнього масиву
+                self._list.append(element)         # додавання окремих перелічених об'єктів до внутрішнього масиву
         if args and isinstance(args[0], Iterable):
-            self.__list.extend(args[0])             # додавання елементів структури до внутрішнього масиву
+            self._list.extend(args[0])             # додавання елементів структури до внутрішнього масиву
 
     def __len__(self) -> int:
-        return len(self.__list)
+        return len(self._list)
 
     def __repr__(self) -> str:
-        return str(self.__list)
+        return str(self._list)
 
     def __getitem__(self, item):
         try:
-            return self.__list[item]
+            return self._list[item]
         except IndexError:
             raise IndexError("getitem: index out of range")  # Виключення про вихід за межі існуючих індексів
 
     def __setitem__(self, key, value):
         try:
-            self.__list[key] = value
+            self._list[key] = value
         except IndexError:
             raise IndexError("setitem: index out of range")
 
     def append(self, value: AbstractObject) -> None:
-        self.__list.append(value)
+        self._list.append(value)
 
     def insert(self, index: int, value: AbstractObject) -> None:
-        self.__list.insert(index, value)
+        self._list.insert(index, value)
 
     def index(self, value: AbstractObject, start: int = 0, stop: int = -1) -> int:
         if stop == -1:
-            stop = len(self.__list)
+            stop = len(self._list)
         try:
-            return self.__list.index(value, start, stop)
+            return self._list.index(value, start, stop)
         except IndexError:
             raise IndexError("index: Для наочності ")
 
     def remove(self, value: AbstractObject) -> None:
         try:
-            self.__list.remove(value)
+            self._list.remove(value)
         except ValueError:
             raise ValueError("remove: value is not exists")     # Помилка за відсутності вказаного об'єкта в структурі
 
@@ -62,9 +62,9 @@ class StructureExample(AbstractStructureExtended):
         return self
 
     def __next__(self) -> AbstractObject:
-        if self.__iter_index >= len(self.__list):
+        if self.__iter_index >= len(self._list):
             raise StopIteration("Ending elements")
-        result = self.__list[self.__iter_index]
+        result = self._list[self.__iter_index]
         self.__iter_index += 1
         return result
 
